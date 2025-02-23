@@ -47,6 +47,7 @@ func (c *client) SendRequest(ctx context.Context, apiKey, prompt string) (string
 		fmt.Println("Ошибка выполнения запроса:", err)
 		return "", err
 	}
+
 	var response Response
 	if err := json.NewDecoder(resp.Body).Decode(&response); err != nil {
 		return "", err
